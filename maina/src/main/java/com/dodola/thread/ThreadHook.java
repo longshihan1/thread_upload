@@ -90,9 +90,11 @@ public final class ThreadHook {
             if(!file.exists()){
                 file.mkdirs();
             }
-            filename=file.getAbsolutePath()+"/thread.txt";
+            String strDateFormat = "yyyy-MM-dd HH:mm:ss";
+            SimpleDateFormat sdf = new SimpleDateFormat(strDateFormat);
+            filename=file.getAbsolutePath()+"/thread-"+sdf.format(System.currentTimeMillis())+".txt";
             File file1=new File(filename);
-            if (file1.exists()){
+            if (!file1.exists()){
                 file1.createNewFile();
             }
         }catch (Exception e){
