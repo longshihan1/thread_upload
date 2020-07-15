@@ -14,7 +14,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ThreadHook.enableThreadHook();
+                ThreadHook.enableThreadHook(getApplication());
                 Toast.makeText(MainActivity.this, "开启成功", Toast.LENGTH_SHORT).show();
             }
         });
