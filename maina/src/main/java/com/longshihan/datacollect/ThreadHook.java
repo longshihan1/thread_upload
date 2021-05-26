@@ -1,6 +1,7 @@
 package com.longshihan.datacollect;
 
 import android.app.Application;
+import android.content.Context;
 
 public final class ThreadHook {
     static {
@@ -8,7 +9,7 @@ public final class ThreadHook {
     }
     private String s;
 
-    public static Application application;
+    public static Context context;
     public static boolean sHasHook = false;
     public static boolean sHookFailed = false;
     private static OnThreadCreateTimeListener onThreadCreateTimeListener;
@@ -43,8 +44,8 @@ public final class ThreadHook {
         return sb.toString();
     }
 
-    public static void enableThreadHook(Application application1) {
-        application=application1;
+    public static void enableThreadHook(Context context) {
+        ThreadHook.context=context;
         if (sHasHook) {
             return;
         }
