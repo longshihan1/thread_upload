@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.longshihan.datacollect.ThreadHook;
+
 public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {

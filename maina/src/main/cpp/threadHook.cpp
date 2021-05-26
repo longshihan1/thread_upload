@@ -86,7 +86,7 @@ void enableThreadHook() {
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_dodola_thread_ThreadHook_enableThreadHookNative(JNIEnv *env, jclass type) {
+Java_com_longshihan_datacollect_ThreadHook_enableThreadHookNative(JNIEnv *env, jclass clazz) {
 
     enableThreadHook();
 }
@@ -98,7 +98,7 @@ static bool InitJniEnv(JavaVM *vm) {
         ALOG("InitJniEnv GetEnv !JNI_OK");
         return false;
     }
-    kJavaClass = reinterpret_cast<jclass>(env->NewGlobalRef(env->FindClass("com/dodola/thread/ThreadHook")));
+    kJavaClass = reinterpret_cast<jclass>(env->NewGlobalRef(env->FindClass("com/longshihan/datacollect/ThreadHook")));
     if (kJavaClass == NULL)  {
         ALOG("InitJniEnv kJavaClass NULL");
         return false;
